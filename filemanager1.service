@@ -1,0 +1,14 @@
+[Unit]
+Description=Make Thunar great again
+Wants=thunar.service
+After=thunar.service
+
+[Service]
+Type=dbus
+ExecStart=python /usr/bin/expose-filemanager1-show-items-method.py
+BusName=org.freedesktop.FileManager1
+KillMode=process
+
+[Install]
+WantedBy=default.target
+
